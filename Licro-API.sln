@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licro-API", "Licro-API\Licro-API.csproj", "{D5B19CB0-5556-48AE-AC94-758A82F9D60C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{7C0392E9-6353-4777-9AE3-8F7AB470B1B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{4F5DC711-0173-4CAE-BC32-40B3F70BE17B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5B19CB0-5556-48AE-AC94-758A82F9D60C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B19CB0-5556-48AE-AC94-758A82F9D60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B19CB0-5556-48AE-AC94-758A82F9D60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B19CB0-5556-48AE-AC94-758A82F9D60C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0392E9-6353-4777-9AE3-8F7AB470B1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0392E9-6353-4777-9AE3-8F7AB470B1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0392E9-6353-4777-9AE3-8F7AB470B1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0392E9-6353-4777-9AE3-8F7AB470B1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5DC711-0173-4CAE-BC32-40B3F70BE17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5DC711-0173-4CAE-BC32-40B3F70BE17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5DC711-0173-4CAE-BC32-40B3F70BE17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5DC711-0173-4CAE-BC32-40B3F70BE17B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FBE4D0C-5367-4A23-8DF1-319833F46620}
+	EndGlobalSection
+EndGlobal
