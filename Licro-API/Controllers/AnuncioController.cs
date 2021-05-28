@@ -1,4 +1,5 @@
 ﻿using Database.Interfaces;
+using Dominio.Enums;
 using Dominio.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -50,6 +51,22 @@ namespace Licro_API.Controllers
             return Ok(anuncios.ToList());
         }
 
+        [HttpGet]
+        [Route("getCategory/{tipoCategoria}")]
+        public async Task<IActionResult> getCategory([FromRoute]TipoCategoria tipoCategoria)
+        {
+
+            var anuncios = _anuncioRepository.GetByTipo(tipoCategoria).Result.Select(an => new Anuncio
+            {
+                Id = an.Id,
+                Residuo = an.Residuo,
+                TipoCategoria = an.TipoCategoria,
+                TipoNegocio = an.TipoNegocio
+            }).OrderBy(an => an.TipoNegocio).ToList();
+
+            return Ok(anuncios.ToList());
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Anuncio anuncio)
         {
@@ -68,7 +85,7 @@ namespace Licro_API.Controllers
         {
             var result = _anuncioRepository.UpdateAsync(anuncio);
 
-            if (!result.IsCompleted)
+            if (!result.IsCompletedSuccessfully)
                 return BadRequest();
 
             return Ok();

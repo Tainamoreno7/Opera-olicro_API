@@ -6,6 +6,7 @@ using Dominio.Modelos;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
+using Dominio.Enums;
 
 namespace Database
 {
@@ -21,6 +22,26 @@ namespace Database
                  .Where(a => a.Id == id);
 
             return anuncios;
+        }
+        //public async Task<IQueryable<Anuncio>> GetByTipo(TipoCategoria tipoCategoria)
+        //{
+        //    IList <Anuncio>  anuncios = Session.Query<Anuncio>()
+        //         .Where(a => a.TipoCategoria == tipoCategoria).ToList();
+
+        //    return (IQueryable<Anuncio>)anuncios;
+
+        
+
+        public async Task<IQueryable<Anuncio>> GetByTipo(TipoCategoria tipoCategoria)
+        {
+            var anuncios = Session.Query<Anuncio>()
+              .Where(a => a.TipoCategoria == tipoCategoria);
+
+            return anuncios;
+
+
+
+
         }
     }
 }

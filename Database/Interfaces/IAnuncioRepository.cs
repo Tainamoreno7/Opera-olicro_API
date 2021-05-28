@@ -1,4 +1,5 @@
-﻿using Dominio.Modelos;
+﻿using Dominio.Enums;
+using Dominio.Modelos;
 
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,7 @@ namespace Database.Interfaces
     public interface IAnuncioRepository : IRepository<Anuncio>
     {
         Task<IQueryable<Anuncio>> GetByUserId(Guid id);
+        Task<IQueryable<Anuncio>> GetByTipo(TipoCategoria tipoCategoria);
+
     }
 }
