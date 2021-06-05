@@ -1,8 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FluentMigrator\NovaPasta\**" />
+    <EmbeddedResource Remove="FluentMigrator\NovaPasta\**" />
+    <None Remove="FluentMigrator\NovaPasta\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentMigrator" Version="3.2.15" />

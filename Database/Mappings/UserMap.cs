@@ -18,6 +18,7 @@ namespace Database.Mappings
             {
                 map.Column("UserId");
                 map.Generator(Generators.GuidComb);
+                map.Generator(Generators.Foreign<User>(e => e.Login));
             });
 
             Property(x => x.Nome);
@@ -25,19 +26,27 @@ namespace Database.Mappings
             Property(x => x.Pais);
             Property(x => x.Whatsapp);
             Property(x => x.Termos);
-            Property(x => x.Email);
-            Property(x => x.Senha);
-            //Property(x => x.Description, map =>
-            //{
-            //    map.Column("Description");
-            //    map.NotNullable(true);
-            //});
 
+            OneToOne(p => p.Login, map => { 
+                map.Constrained(true);
+            });
 
-
-            //OneToOne(p => p.Pessoa, map => map.Constrained(true));
-
-            //ManyToOne(x => x.Language, map => map.Column("LanguageId"));
+            Bag(p => p.Anuncios,
+                map =>
+                {
+                    map.Key(x =>
+                    {
+                        x.Column("UserId");
+                    });
+                    map.Cascade(Cascade.All | Cascade.DeleteOrphans);
+                    map.Inverse(true);
+                    map.Fetch(CollectionFetchMode.Join);
+                   
+                },
+                rel =>
+                {
+                    rel.OneToMany(map => map.Class(typeof(Anuncio)));
+                });
         }
 
     }

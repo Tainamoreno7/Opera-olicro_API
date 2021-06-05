@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio.Modelos
 {
-    public class Anuncio : BaseEntity
+    public class AnuncioComand : BaseEntity
     {
 
         public virtual TipoCategoria TipoCategoria { get; set; }
@@ -21,9 +21,9 @@ namespace Dominio.Modelos
         public virtual string Quantidade { get; set; }
         public virtual string Frequencia { get; set; }
         public virtual string Solucao { get; set;}
-        public virtual byte[] Fotos { get; set; }
+        public virtual string Fotos { get; set; }
         public virtual string ExtFoto { get; set;}
-        public virtual Endereco Endereco { get; set; }
+       public virtual Endereco Endereco { get; set; }
         public virtual User User { get; set; }
                     
 

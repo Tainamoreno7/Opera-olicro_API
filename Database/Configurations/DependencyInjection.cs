@@ -1,6 +1,7 @@
 ﻿using Database.FluentMigrator;
 using Database.Interfaces;
 using Database.Mappings;
+using Database.Repositories;
 using Dominio.Configurations;
 using FluentMigrator.Runner;
 using Microsoft.Extensions.Configuration;
@@ -57,11 +58,14 @@ namespace Database.Configurations
 
                 var mapper = new ModelMapper();
 
-                mapper.AddMappings(typeof(AnuncioMap).Assembly.ExportedTypes);
+                mapper.AddMapping<AnuncioMap>();
+                mapper.AddMapping<EnderecoMap>();
+                mapper.AddMapping<LoginMap>();
+                mapper.AddMapping<UserMap>();
+
                 HbmMapping mappings = mapper.CompileMappingForAllExplicitlyAddedEntities();
 
-                mappings.autoimport = false;
-                nhConfiguration.AddMapping(mappings);
+                nhConfiguration.AddDeserializedMapping(mappings, "Database.Mappings");
 
                 return nhConfiguration.BuildSessionFactory();
             });
@@ -86,6 +90,10 @@ namespace Database.Configurations
         private static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IAnuncioRepository, AnuncioRepository>();
+            services.AddScoped<ILoginRepository, LoginRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
         }
 
         private static void AddFluentMigrator(IServiceCollection services, IConfiguration configuration)

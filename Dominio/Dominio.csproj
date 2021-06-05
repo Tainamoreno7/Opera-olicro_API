@@ -68,21 +68,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comands\AnuncioComand.cs" />
     <Compile Include="Configurations\ClientSettings.cs" />
+    <Compile Include="Enums\TipoUnidade.cs" />
+    <Compile Include="Enums\TipoOrigem.cs" />
     <Compile Include="Enums\TipoNegocio.cs" />
     <Compile Include="Enums\TipoCategoria.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Modelos\Anuncio.cs" />
     <Compile Include="Modelos\BaseEntity.cs" />
+    <Compile Include="Modelos\Endereco.cs" />
+    <Compile Include="Modelos\Login.cs" />
     <Compile Include="Modelos\Notifications\Notification.cs" />
     <Compile Include="Modelos\Notifications\NotificationContext.cs" />
     <Compile Include="Modelos\TrackInformation.cs" />
     <Compile Include="Modelos\Tracking.cs" />
     <Compile Include="Modelos\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelos\AnuncioView.cs" />
+    <Compile Include="ViewModelos\EnderecoView.cs" />
+    <Compile Include="ViewModelos\UserView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

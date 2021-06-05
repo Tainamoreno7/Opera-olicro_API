@@ -18,6 +18,8 @@ using Licro_Api.Filters;
 using NLog;
 using Microsoft.OpenApi.Models;
 using Dominio.Modelos.Notifications;
+using System.Reflection;
+using AutoMapper;
 
 namespace Licro_API
 {
@@ -53,6 +55,7 @@ namespace Licro_API
             services.AddHttpContextAccessor();
 
             services.AddScoped<NotificationContext>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +71,7 @@ namespace Licro_API
                 options.WithOrigins(
                     "capacitor://localhost",
                     "http://localhost",
+                    "http://localhost:4200",
                     "http://localhost:51368",
                     "http://localhost:38511",
                     "https://localhost:44332"
