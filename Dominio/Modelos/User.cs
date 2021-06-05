@@ -8,16 +8,18 @@ namespace Dominio.Modelos
 {
     public class User : BaseEntity
     {
+        public User()
+        {
+            Anuncios = new List<Anuncio>(); 
+        }
+
         public virtual string Nome { get; set; }
         public virtual string Sobrenome { get; set; }
         public virtual string Pais { get; set; }
         public virtual string Whatsapp { get; set; }
-        public virtual string Email { get; set; }
-
-        public virtual string Senha { get; set; }
-        
+         
+        public virtual Login Login { get; set; }
         public virtual bool Termos { get; set; }
-
-        
+        public virtual IList<Anuncio> Anuncios { get; set; }
     }
 }

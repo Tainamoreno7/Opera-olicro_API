@@ -8,7 +8,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Dominio.Enums;
 
-namespace Database
+namespace Database.Repositories
 {
     public class AnuncioRepository : Repository<Anuncio>, IAnuncioRepository
     {
@@ -19,7 +19,7 @@ namespace Database
         public async Task<IQueryable<Anuncio>> GetByUserId(Guid id)
         {
             var anuncios = Session.Query<Anuncio>()
-                 .Where(a => a.Id == id);
+                 .Where(a => a.User.Id == id);
 
             return anuncios;
         }

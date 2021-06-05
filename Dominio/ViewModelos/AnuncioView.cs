@@ -1,15 +1,16 @@
 ﻿using Dominio.Enums;
+using Dominio.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio.Modelos
+namespace Dominio.ViewModelos
 {
-    public class Anuncio : BaseEntity
+    public class AnuncioView
     {
-
+        public virtual Guid Id { get; set; }
         public virtual TipoCategoria TipoCategoria { get; set; }
         public virtual TipoNegocio TipoNegocio { get; set; }
         public virtual string Residuo { get; set; }
@@ -20,13 +21,10 @@ namespace Dominio.Modelos
         public virtual string Recipiente { get; set; }
         public virtual string Quantidade { get; set; }
         public virtual string Frequencia { get; set; }
-        public virtual string Solucao { get; set;}
         public virtual byte[] Fotos { get; set; }
-        public virtual string ExtFoto { get; set;}
-        public virtual Endereco Endereco { get; set; }
-        public virtual User User { get; set; }
-                    
-
+        public virtual string ExtFoto { get; set; }
+        public virtual EnderecoView Endereco { get; set; }
+        public virtual UserView User { get; set; }
 
     }
 }
